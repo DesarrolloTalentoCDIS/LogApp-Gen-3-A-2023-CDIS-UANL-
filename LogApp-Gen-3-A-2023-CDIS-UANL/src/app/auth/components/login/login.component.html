@@ -1,1 +1,33 @@
-<p>login works!</p>
+<div class="login-form">
+  <form [formGroup]="formularioLog" (ngSubmit)="login()">
+    <h1>Login</h1>
+    <div class="content">
+      <div class="input-field">
+        <input placeholder="ID" formControlName="id" required/>
+      </div>
+      <div class="input-field">
+        <input
+          type="password"
+          placeholder="Password"
+          autocomplete="new-password"
+          formControlName="pass"
+          required
+        />
+      </div>
+      <a href="#" class="link">Forgot Your Password?</a>
+    </div>
+    <div class="action">
+      <button routerLink="/auth/register">Register</button>
+      <button>Sign in</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  let form = document.querySelecter("form");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    return false;
+  });
+</script>
